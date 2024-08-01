@@ -1,0 +1,45 @@
+<section>
+  <main>
+    <div class="navbar">
+      <div class="logo">
+        <img src="img/logo.svg" alt="" />
+        <h1>Hotel</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Sobre nós</a></li>
+          <li><app-button-contato></app-button-contato></li>
+        </ul>
+      </nav>
+      <div class="nav-mobile">
+        @if (navMobileIsActive) {
+        <img
+          src="img/nav-mobile-icon.svg"
+          alt=""
+          (click)="activeNavMobile()"
+        />
+        }
+        @if(bgNavMobileIsActive){
+          <div 
+            class="bg-nav-mobile"
+            [ngClass]="{'fadeout animation-duration-300': effectFadeOutActive, 'fadein animation-duration-400': bgNavMobileIsActive}"
+          >
+            <img
+              src="img/close-nav-mobile-icon.svg"
+              alt=""
+              (click)="activeEffectFadeOut(300)"
+            />
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Serviços</a></li>
+              <li><a href="#">Sobre nós</a></li>
+              <li><app-button-contato class="z-5"></app-button-contato></li>
+            </ul>
+          </div>
+          }
+      </div>
+    </div>
+  </main>
+</section>
